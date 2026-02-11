@@ -1,35 +1,31 @@
 print("this is task1")
 
+tasks=[]
 while True:
-  print("-----SIMPLE CALCULATOR-----")
-  print("1.Addition")
-  print("2.Subtraction")
-  print("3.Multiplication")
-  print("4.Division")
-
-  choice = int(input("enter your choice(1/2/3/4):"))
-  num1= float(input("enter first number:"))
-  num2=float(input("enter second number:"))
-
-  if choice== 1:
-        print("result=",num1+num2)
-  elif choice == 2:
-      print("result =",num1-num2)
-
-  elif choice ==3:
-      print("result =",num1*num2)
-      
-  elif choice ==4:
-        if num2==0:
-                print("cannot divide by zero")
-        else :
-                print("result=", num1/num2)
-
-  else:
-    print("invalid choice")
-
-  again = input("Do you want to calculate again? (yes/no): ")
-
-  if again.lower() != 'yes':
-        print("Thank you for using calculator!")
+    print("\n---------TO DO LIST---------")
+    print("1.add task")
+    print("2.view task")
+    print("3.exit")
+    
+    choice=input("enter your choice (1/2/3):")
+    if choice=='1':
+        task = input("enter the task you want to do :")
+        tasks.append(task)
+        print("task inserted successfully!" )
+        
+        
+    elif choice=='2':
+        if len(tasks)==0:
+            print("there are no tasks in list")
+            
+        else:
+            print(" your tasks:")
+            for i in range(len(tasks)):
+                print(i+1,".",tasks[i])
+                
+    elif choice =='3':
+        print("Exiting TO-DO LIST thank you !")
         break
+        
+    else:
+        print("invalid choice !")
